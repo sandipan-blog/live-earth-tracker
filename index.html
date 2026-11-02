@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Earth Tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Live Earth Tracker</h1>
+    <span id="clock">--:--:-- UTC</span>
+    <button id="dark-map-toggle" class="chip" type="button"></button>
+    <span id="status-dot" title="Status"></span>
+  </header>
+  <div id="earth-now"></div>
+  <main class="layout">
+    <div id="map"></div>
+    <aside id="panel">
+      <section id="search">
+        <h2>Find a city</h2>
+        <div class="search-row">
+          <input type="text" id="city-search" placeholder="City name, e.g. Delhi" autocomplete="off">
+          <button id="my-location" class="chip" title="Use my location">📍 My location</button>
+        </div>
+        <div id="pass-info"></div>
+      </section>
+      <section id="layers">
+        <h2>Layers</h2>
+        <label><input type="checkbox" id="layer-iss" checked> ISS</label>
+        <label><input type="checkbox" id="layer-quakes" checked> Earthquakes</label>
+        <label><input type="checkbox" id="layer-flights" checked> Flights</label>
+      </section>
+      <section id="stats">
+        <h2>Stats</h2>
+        <div id="stat-iss" class="skeleton"></div>
+        <div id="stat-quakes" class="skeleton"></div>
+        <div id="stat-flights" class="skeleton"></div>
+      </section>
+      <section id="ask">
+        <h2>Ask the map <span id="ask-badge" class="ask-badge"></span></h2>
+        <div id="ask-log"></div>
+        <form id="ask-form">
+          <input type="text" id="ask-input" placeholder="e.g. where is the ISS?" autocomplete="off">
+          <button type="submit">Ask</button>
+        </form>
+        <div id="ask-chips"></div>
+      </section>
+      <section id="alerts">
+        <h2>Alerts</h2>
+        <ol id="alert-list"></ol>
+      </section>
+    </aside>
+  </main>
+  <div id="info-card" class="hidden">
+    <button id="info-close" aria-label="Close">&times;</button>
+    <div id="info-body"></div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

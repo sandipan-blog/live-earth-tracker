@@ -1,0 +1,1 @@
+{"name":"live-earth-tracker","private":true,"type":"module","scripts":{"start":"node server.js","test":"node --test tests/*.test.js","watch":"node watcher.js --every 10"}}
